@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        * {
+        box-sizing: border-box;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+        position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+        cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+        }
+
+        #move {
+          right: 30%;
+        }
+
+        #move2 {
+          left: 30%;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+        }
+
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+        float: left;
+        width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+        opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+        opacity: 1;
+        }
+         
+        /* Set height of body and the document to 100% to enable "full page tabs" */
+        body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+        text-align: center;
+        }
+
+        #font-weight {
+        font-weight: bold;
+        font-size: xx-large;
+        color: white; 
+        text-shadow: #555;
+        max-width: 1000px;
+        margin: auto;
+        }
+
+        /* Style tab links */
+        .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+        }
+
+        #trainer,
+        #mario {
+            max-width: 200px;
+            margin: auto;
+        }
+
+        .tablink:hover {
+        background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+        color: white;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+        }
+
+        #Home {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/MSH82_st_helens_plume_from_harrys_ridge_05-19-82.jpg/1200px-MSH82_st_helens_plume_from_harrys_ridge_05-19-82.jpg);
+               background-repeat: no-repeat;
+               background-size: cover; 
+        }
+        #experience {background-image: url(https://images.freeimages.com/images/large-previews/877/enchanted-forest-1530895.jpg);
+               background-repeat: no-repeat;
+               background-size: cover; 
+        }
+        #Contact {background-image: url(https://images.freeimages.com/images/large-previews/314/water-on-the-rocks-1393347.jpg);
+               background-repeat: no-repeat;
+               background-size: cover;     
+        }
+        #Self-Taught {background-image: url(https://images.freeimages.com/images/large-previews/804/orange-sky-1197038.jpg);
+               background-repeat: no-repeat;
+               background-size: cover;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('experience', this, 'green')">Experience</button>
+        <button class="tablink" onclick="openPage('Self-Taught', this, 'orange')">Education/Self-Taught</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+        
+        <div id="Home" class="tabcontent">
+          <p id="font-weight">You miss 100% of the shots you don't take</p>
+        </div>
+        
+        <div id="experience" class="tabcontent">
+          <a target="_blank" href="https://www.tritondoors.com/">
+          <img src="https://cdn.website.thryv.com/64321338c03c4efe8a5aa384fd5f7118/MOBILE/png/003.png"></a>
+          <p id="font-weight">Assistant Store Manager 2016-Present</p> 
+          <p id="font-weight">24/7 emergency calls, Commercial door install,  
+              Full service and repair, Billing and Documentation</p>
+          <img id="mario" src="http://blog.supplyhouse.com/wp-content/uploads/2018/03/Mario-Plumber.jpg">
+          <p id="font-weight">Plumbing Subcontractor 2011-2016</p>
+          <p id="font-weight">Residential emergency service and repair, New construction, Testing existing system</p>
+          <img id="trainer" src="https://pre00.deviantart.net/7adf/th/pre/i/2015/173/f/c/new_training_partner__part_2_by_iziziza-d8ye3zw.png">
+          <p id="font-weight">Personal Trainer 24 Hour Fitness 2010-2011, 2013-2014</p>
+          <p id="font-weight">Workout designer, Service rep, Sales rep, Cashier</p>
+        </div>
+        
+        <div id="Contact" class="tabcontent">
+          <h1>Contact</h1>
+          <p id="font-weight" class="fun-effect">Phone: example</p>
+          <p id="font-weight">E-mail: example</p>
+          <p id="font-weight">Github: /Spamlowkick</p>
+        </div>
+        
+        <div id="Self-Taught" class="tabcontent">
+          <h1>Education/Self-Taught</h1>
+
+          <!-- Container for the image gallery -->
+        <div class="Self-Taught" class="tabcontent">
+
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+            <img src="https://images.efollett.com/htmlroot/images/templates/storeLogos/CA/1259.gif" style="width:700px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/Palomar-college-logo.png" style="width:700px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+            <img src="https://ampupfitness.com/wp-content/uploads/2017/03/NASM_certified.png" style="width:700px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+            <img src="http://www.createincode.com/static/webapp/img/webdesign_logo.jpeg" style="width:700px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+            <img src="https://i0.wp.com/zappysys.com/blog/wp-content/uploads/2018/06/REST-API-icon.jpg?ssl=1" style="width:400px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7WI3-q4gQK5wvIVH8ju69zAudA_DgIqE10NgLK715QJ3AsUYS4w" style="width:400px">
+        </div>
+      
+        <!-- Next and previous buttons -->
+        <a id="move2" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a id="move" class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+        <!-- Image text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+      
+        <!-- Thumbnail images -->
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="https://images.efollett.com/htmlroot/images/templates/storeLogos/CA/1259.gif" style="width:250px; height: 150px;" onclick="currentSlide(1)" alt="Biochemistry 2017-2018">
+          </div>
+          <div class="column"> 
+            <img class="demo cursor" src="https://upload.wikimedia.org/wikipedia/en/e/e2/Palomar-college-logo.png" style="width:250px; height: 150px;" onclick="currentSlide(2)" alt="2007-2015">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="https://ampupfitness.com/wp-content/uploads/2017/03/NASM_certified.png" style="width:250px; height: 150px;" onclick="currentSlide(3)" alt="2010">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="http://www.createincode.com/static/webapp/img/webdesign_logo.jpeg" style="width:250px; height: 150px;" onclick="currentSlide(4)" alt="CSS3, HTML5, JS">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="https://i0.wp.com/zappysys.com/blog/wp-content/uploads/2018/06/REST-API-icon.jpg?ssl=1" style="width:250px; height: 150px;" onclick="currentSlide(5)" alt="API Calls">
+          </div> 
+          <div class="column">
+            <img class="demo cursor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7WI3-q4gQK5wvIVH8ju69zAudA_DgIqE10NgLK715QJ3AsUYS4w" style="width:250px; height: 150px;" onclick="currentSlide(6)" alt="SQL">
+          </div>
+        </div>
+      </div>  
+    </div>
+    
+    <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        </script>
+
+    </body>
+
+
+</html>
